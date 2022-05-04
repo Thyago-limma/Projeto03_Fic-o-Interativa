@@ -42,6 +42,7 @@ const escolhaInvalida = () => console.log(`\x1b[30m Opção Inválida. \x1b[0m`)
 //Váriavel Para Reiniciar o jogo Dentro do Loop
 let restart = 0;
 
+//Função Para Alterar o Status do Personagem Passando os 3 Parametros
 function alterarStatus(p1, p2, p3) {
     (personagem.Sanidade = p1),
         (personagem.Coragem = p2),
