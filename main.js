@@ -42,22 +42,32 @@ const escolhaInvalida = () => console.log(`\x1b[30m Opção Inválida. \x1b[0m`)
 //Váriavel Para Reiniciar o jogo Dentro do Loop
 let restart = 0;
 
+function alterarStatus(p1, p2, p3) {
+    (personagem.Sanidade = p1),
+        (personagem.Coragem = p2),
+        (personagem.Vida = p3);
+}
+
 //Função Caso a Escolha do Usuário Leve ao Fim do Jogo
 function gameover() {
     //Variavel Para Perguntar ao Usuário se Ele Deseja Jogar Novamente
     let escolha = prompt(
         `\x1b[33m Deseja Voltar Novamente Para o Começo da ${horas[i]} SIM ou NAO \x1b[0m`,
     ).toUpperCase();
+
     console.clear(); //Console.clear Para Limpar o Terminal e Dar Maior Visbilidade
 
     //Validação da Escolha do Usuario
     while (escolha != 'SIM' && escolha != 'NAO') {
         escolhaInvalida(); //Chamando a Função escolhaInvalida
+
         escolha = prompt(
             `\x1b[33m Deseja Jogar Novamente? SIM ou NAO \x1b[0m `,
         ).toUpperCase(); //Repetindo a Pergunta Até a Escolha Ser "SIM" ou "NAO"
+
         console.clear();
     }
+
     if (escolha == 'NAO') {
         //Condicao Para Reiniciar o Jogo Novamente
         restart = 1;
@@ -77,12 +87,11 @@ Daquele Hospício
 \x1b[0m `);
 
     //Determinando Manualmente O Status Atualdo Personagem.
-    personagem.Coragem = 0;
-    personagem.Vida = 100;
-    personagem.Sanidade = 100;
+    alterarStatus(100, 0, 100);
 
     personagem.exibirStatus(); //Chamando a Função Exibir Status Pra Exibir o Status do Personagem
     //Agora Modificado de Acordo com a Escolha Dele
+
     console.log(`Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar!`); //Mensagem de Fim de Jogo
 
     return gameover();
@@ -98,11 +107,10 @@ function Final2() {
   
  \x1b[0m `);
 
-    personagem.Coragem = 30;
-    personagem.Sanidade = 15;
-    personagem.Vida = 0;
+    alterarStatus(15, 30, 0);
 
     personagem.exibirStatus();
+
     console.log(`Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar!`);
 
     return gameover();
@@ -120,11 +128,10 @@ function Final3() {
     
     \x1b[0m`);
 
-    personagem.Vida = 100;
-    personagem.Coragem = 50;
-    personagem.Sanidade = 0;
+    alterarStatus(0, 50, 100);
 
     personagem.exibirStatus();
+
     console.log(`Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar!`);
 
     return gameover();
@@ -140,11 +147,10 @@ function Final4() {
       
       \x1b[0m`);
 
-    personagem.Coragem = 100;
-    personagem.Vida = 100;
-    personagem.Sanidade = 0;
+    alterarStatus(0, 100, 100);
 
     personagem.exibirStatus();
+
     console.log(`Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar!`);
 
     return gameover();
@@ -162,11 +168,10 @@ function Final5() {
         
             \x1b[0m`);
 
-    personagem.Coragem = 0;
-    personagem.Vida = 0;
-    personagem.Sanidade = 0;
+    alterarStatus(0, 0, 0);
 
     personagem.exibirStatus();
+
     console.log(`Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar!`);
 
     return gameover();
@@ -183,6 +188,7 @@ function Hora1() {
 \x1b[0m`);
 
     console.log();
+
     console.log(
         `\x1b[34m \n Digite [1] Pra Escolher "INVESTIGAR O BARULHO" \n Digite [2] Pra Escolher "OLHAR PELA JANELA" \n Digite [3] Pra Escolher "CAMINHAR AO ANDAR DE CIMA" \n Digite [4] Pra EScolher "LIGAR PARA O SEU CHEFE" \n \x1b[0m`,
     );
@@ -206,9 +212,12 @@ function Hora1() {
 
         //Condição Para Executar Dependendo da Escolha do Usuário
     }
+
     if (Primeiraescolha == 1) {
         i++;
+
         intervalo();
+
         console.log(`\x1b[32m
 
     Você Decidiu Investigar o Barulho. Pegou Sua Lanterna, e Foi Ver de Onde Vinha o Que Tinha Ouvido.
@@ -216,13 +225,14 @@ function Hora1() {
 
     \x1b[0m`);
 
-        personagem.Coragem = 90;
-        personagem.Sanidade = 95;
+        alterarStatus(95, 90, 100);
 
         personagem.exibirStatus();
     } else if (Primeiraescolha == 2) {
         i++;
+
         intervalo();
+
         console.log(`\x1b[32m
 
     Você Pegou sua Lanterna e Sua Arma, E Olha Pela Janela de Vidro do Saguão Principal. 
@@ -232,13 +242,14 @@ function Hora1() {
 
     \x1b[0m`);
 
-        personagem.Vida = 87;
-        personagem.Sanidade = 75;
+        alterarStatus(75, 100, 87);
 
         personagem.exibirStatus();
     } else if (Primeiraescolha == 3) {
         i++;
+
         intervalo();
+
         console.log(`\x1b[32m
 
     Você se Vê com Medo. Mas Decide Vasculhar Todo o Prédio, e Fazer Sua Função de Vigilante.
@@ -246,12 +257,12 @@ function Hora1() {
     Você Atira Várias Vezes. Mas Ver que as Balas Atravessam. 
     \x1b[0m`);
 
-        personagem.Sanidade = 60;
-        personagem.Vida = 80;
+        alterarStatus(60, 100, 80);
 
         personagem.exibirStatus();
     } else {
         intervalo();
+
         console.log(`\x1b[32m
     
     Você é Um Medroso, e Ao Escutar um Barulho de Choro de Criança. Você Liga Para o Seu Chefe 
@@ -297,7 +308,9 @@ Então ${personagem.Nome}, Está Preparado Para Enfrentar Mais Essa Decisão que
 
     if (Segundaescolha == 1) {
         i++;
+
         intervalo();
+
         console.log(`\x1b[32m
     
     Você Entrou em Uma Sala, e Lá Encontrou uma Carta de Um Ex-Funcionário Contando uma História Bizarra que Ocorreu Naquele Local,
@@ -306,13 +319,12 @@ Então ${personagem.Nome}, Está Preparado Para Enfrentar Mais Essa Decisão que
 
     \x1b[0m`);
 
-        personagem.Coragem = 50;
-        personagem.Vida = 90;
-        personagem.Sanidade = 58;
+        alterarStatus(58, 50, 90);
 
         personagem.exibirStatus();
     } else if (Segundaescolha == 2) {
         intervalo();
+
         console.log(`\x1b[32m
     
 Você Entra na Sala o Qual Está Escrito o Nome ${personagem.Nome} Na Parede.
@@ -324,7 +336,9 @@ se Encontra Trancada. Você Procura um Jeito de Escapar. Mas Parece que não há
         Final2();
     } else if (Segundaescolha == 3) {
         i++;
+
         intervalo();
+
         console.log(`\x1b[32m
     
     Você Entra Nessa Sala. E Nela se Encontra Um Telão Rodando Uma Fita, Onde Alguém Contava a História de um Médico que Surtou e Está Matando Todos Ali 
@@ -334,13 +348,12 @@ se Encontra Trancada. Você Procura um Jeito de Escapar. Mas Parece que não há
 
     \x1b[0m`);
 
-        personagem.Coragem = 100;
-        personagem.Vida = 100;
-        personagem.Sanidade = 79;
+        alterarStatus(79, 100, 100);
 
         personagem.exibirStatus();
     } else {
         intervalo();
+
         console.log(`\x1b[32m
     
     Você Adentra na Sala, E Nela Encontra uma Mulher,Toda Ensanguentada e Quase Sem Vida com Um Bebê no Colo 
@@ -387,6 +400,7 @@ Agora Meu Caro ${personagem.Nome}! As Suas Escolhas Determinarão o Seu Destino 
 
     if (Terceiraescolha == 1) {
         intervalo();
+
         console.log(`\x1b[32m
     
    Com o Fantasma Chegando Cada Vez Mais Perto,Você Não Teve Outra Escolha a Não Ser Enfrentá-lo. Ao Tentar de Algum Jeito
@@ -397,7 +411,9 @@ Agora Meu Caro ${personagem.Nome}! As Suas Escolhas Determinarão o Seu Destino 
         Final4();
     } else if (Terceiraescolha == 2) {
         i++;
+
         intervalo();
+
         console.log(`\x1b[32m
     
     Você se Esconde Dentro de Um Armário,e Quando Escuta o Médico Tão Perto que Dava Pra Ouvir sua Respiração.
@@ -406,14 +422,14 @@ Agora Meu Caro ${personagem.Nome}! As Suas Escolhas Determinarão o Seu Destino 
 
     \x1b[0m `);
 
-        personagem.Coragem = 100;
-        personagem.Vida = 100;
-        personagem.Sanidade = 100;
+        alterarStatus(100, 100, 100);
 
         personagem.exibirStatus();
     } else if (Terceiraescolha == 3) {
         i++;
+
         intervalo();
+
         console.log(`\x1b[32m
 
 Você Corre o Mais Rápido que Pode, em Direção a Porta Principal.Ao Chegar Lá Você Percebe que Está de Dia
@@ -421,13 +437,12 @@ Então a Porta Automaticamente se Abre, e Você se Ver Livre de Toda Aquela Louc
 
 \x1b[0m`);
 
-        personagem.Coragem = 100;
-        personagem.vida = 80;
-        personagem.Sanidade = 50;
+        alterarStatus(50, 100, 80);
 
         personagem.exibirStatus();
     } else {
         intervalo();
+
         console.log(`\x1b[32m
   
   Você Olha Para o Lado e Ver Um Galão de Gasolina. Lembra-se que Tem Um Isqueiro no Bolso
@@ -455,9 +470,7 @@ Foi Assim Que Esse Local se Tornou Assombrado.
         `\x1b[31m Você Tem Muita sorte de Ter Chegado Vivo Até Aqui,Obrigado Por Jogar!! \x1b[0m`,
     );
 
-    personagem.Coragem = 100;
-    personagem.Sanidade = 100;
-    personagem.Vida = 100;
+    alterarStatus(100, 100, 100);
 
     personagem.exibirStatus();
 
@@ -468,6 +481,7 @@ Foi Assim Que Esse Local se Tornou Assombrado.
 
 function Intro() {
     console.clear();
+
     //Função de Introdução do Jogo,Onde Exibe a História,o Status do Personagem, e a Descrição do Jogo
     console.log(`\x1b[33m
   Bem Vindo! ${personagem.Nome}, Você Trabalha em Uma Empresa de Vigilância. e é Contratado Para Passar um ciclo de 3 Horas
@@ -483,6 +497,7 @@ function Intro() {
     );
 
     personagem.exibirStatus(); //Chamando o Metodo exibirStatus, Que Vai exibir na Tela o Status do Personagem
+
     console.log(
         `\x1b[33m \n Quando Algum dos Status Chegar a "0", Você Perde o Jogo! \n \x1b[0m`,
     );
@@ -509,6 +524,7 @@ while (restart == 0) {
             // Condiçao quando i for igual a 0 ele iniciar a primeira hora
 
             console.log(`\n ${horas[i]} \n`);
+
             Hora1(); // chamando a função Hora1
 
             if (restart == 1) {
@@ -517,6 +533,7 @@ while (restart == 0) {
             }
         } else if (i == 1) {
             console.log(`\n ${horas[i]} \n`);
+
             Hora2();
 
             if (restart == 1) {
@@ -524,6 +541,7 @@ while (restart == 0) {
             }
         } else if (i == 2) {
             console.log(`\n ${horas[i]} \n`);
+
             Hora3();
 
             if (restart == 1) {
@@ -531,6 +549,7 @@ while (restart == 0) {
             }
         } else if (i == 3) {
             console.log();
+
             FinalHistoria();
 
             if (restart == 1) {
