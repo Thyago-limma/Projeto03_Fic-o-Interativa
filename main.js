@@ -13,7 +13,6 @@ Hoje em Dia Escutam Várias Histórias de Pessoas que Passam na Frente Daquele H
 //Variavel pra Pedir o Nome do Personagem.
 let nome = prompt(`\x1b[33m Qual o Nome do Seu Personagem? \x1b[0m`);
 
-
 //Objeto que Define o Nome e o Status Atual do Personagem
 let personagem = {
     Nome: nome,
