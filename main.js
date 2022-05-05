@@ -13,6 +13,10 @@ Hoje em Dia Escutam Várias Histórias de Pessoas que Passam na Frente Daquele H
 //Variavel pra Pedir o Nome do Personagem.
 let nome = prompt(`\x1b[33m Qual o Nome do Seu Personagem? \x1b[0m`);
 
+while (nome == prompt()) {
+    prompt(`\x1b[33m Qual o Nome do Seu Personagem? \x1b[0m`);
+}
+
 //Objeto que Define o Nome e o Status Atual do Personagem
 let personagem = {
     Nome: nome,
@@ -93,7 +97,9 @@ Daquele Hospício
     personagem.exibirStatus(); //Chamando a Função Exibir Status Pra Exibir o Status do Personagem
     //Agora Modificado de Acordo com a Escolha Dele
 
-    console.log(`\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`); //Mensagem de Fim de Jogo
+    console.log(
+        `\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`,
+    ); //Mensagem de Fim de Jogo
 
     return gameover();
 }
@@ -112,7 +118,9 @@ function Final2() {
 
     personagem.exibirStatus();
 
-    console.log(` \n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`);
+    console.log(
+        ` \n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`,
+    );
 
     return gameover();
 }
@@ -133,7 +141,9 @@ function Final3() {
 
     personagem.exibirStatus();
 
-    console.log(`\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`);
+    console.log(
+        `\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`,
+    );
 
     return gameover();
 }
@@ -152,7 +162,9 @@ function Final4() {
 
     personagem.exibirStatus();
 
-    console.log(`\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`);
+    console.log(
+        `\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`,
+    );
 
     return gameover();
 }
@@ -173,7 +185,9 @@ function Final5() {
 
     personagem.exibirStatus();
 
-    console.log(`\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`);
+    console.log(
+        `\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`,
+    );
 
     return gameover();
 }
