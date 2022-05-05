@@ -92,7 +92,7 @@ Daquele Hospício
     personagem.exibirStatus(); //Chamando a Função Exibir Status Pra Exibir o Status do Personagem
     //Agora Modificado de Acordo com a Escolha Dele
 
-    console.log(`Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar!`); //Mensagem de Fim de Jogo
+    console.log(`\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`); //Mensagem de Fim de Jogo
 
     return gameover();
 }
@@ -111,7 +111,7 @@ function Final2() {
 
     personagem.exibirStatus();
 
-    console.log(`Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar!`);
+    console.log(` \n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`);
 
     return gameover();
 }
@@ -132,7 +132,7 @@ function Final3() {
 
     personagem.exibirStatus();
 
-    console.log(`Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar!`);
+    console.log(`\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`);
 
     return gameover();
 }
@@ -151,7 +151,7 @@ function Final4() {
 
     personagem.exibirStatus();
 
-    console.log(`Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar!`);
+    console.log(`\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`);
 
     return gameover();
 }
@@ -172,7 +172,7 @@ function Final5() {
 
     personagem.exibirStatus();
 
-    console.log(`Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar!`);
+    console.log(`\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`);
 
     return gameover();
 }
