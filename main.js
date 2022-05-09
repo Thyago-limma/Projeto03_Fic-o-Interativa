@@ -13,10 +13,6 @@ Hoje em Dia Escutam Várias Histórias de Pessoas que Passam na Frente Daquele H
 //Variavel pra Pedir o Nome do Personagem.
 let nome = prompt(`\x1b[33m Qual o Nome do Seu Personagem? \x1b[0m`);
 
-while (nome == prompt()) {
-    prompt(`\x1b[33m Qual o Nome do Seu Personagem? \x1b[0m`);
-}
-
 //Objeto que Define o Nome e o Status Atual do Personagem
 let personagem = {
     Nome: nome,
@@ -25,10 +21,8 @@ let personagem = {
     Vida: 100,
 
     //Função para exibir o status do personagem quando for chamada.
-    exibirStatus: function () {
-        console.log(
-            `\x1b[34m Seu Nome é: ${this.Nome} \n Sua Sanidade é: ${this.Sanidade} \n Sua Coragem é: ${this.Coragem} \n Sua Vida é: ${this.Vida} \x1b[0m`,
-        );
+    exibirStatus: function (nome) {
+        console.table(nome);
     },
 };
 
@@ -94,7 +88,7 @@ Daquele Hospício
     //Determinando Manualmente O Status Atualdo Personagem.
     alterarStatus(100, 0, 100);
 
-    personagem.exibirStatus(); //Chamando a Função Exibir Status Pra Exibir o Status do Personagem
+    personagem.exibirStatus(personagem); //Chamando a Função Exibir Status Pra Exibir o Status do Personagem
     //Agora Modificado de Acordo com a Escolha Dele
 
     console.log(
@@ -116,7 +110,7 @@ function Final2() {
 
     alterarStatus(15, 30, 0);
 
-    personagem.exibirStatus();
+    personagem.exibirStatus(personagem);
 
     console.log(
         ` \n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`,
@@ -139,7 +133,7 @@ function Final3() {
 
     alterarStatus(0, 50, 100);
 
-    personagem.exibirStatus();
+    personagem.exibirStatus(personagem);
 
     console.log(
         `\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`,
@@ -160,7 +154,7 @@ function Final4() {
 
     alterarStatus(0, 100, 100);
 
-    personagem.exibirStatus();
+    personagem.exibirStatus(personagem);
 
     console.log(
         `\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`,
@@ -183,7 +177,7 @@ function Final5() {
 
     alterarStatus(0, 0, 0);
 
-    personagem.exibirStatus();
+    personagem.exibirStatus(personagem);
 
     console.log(
         `\n Fim de Jogo Pra Você ${personagem.Nome} Obrigado por Jogar! \n`,
@@ -242,7 +236,7 @@ function Hora1() {
 
         alterarStatus(95, 90, 100);
 
-        personagem.exibirStatus();
+        personagem.exibirStatus(personagem);
     } else if (Primeiraescolha == 2) {
         i++;
 
@@ -259,7 +253,7 @@ function Hora1() {
 
         alterarStatus(75, 100, 87);
 
-        personagem.exibirStatus();
+        personagem.exibirStatus(personagem);
     } else if (Primeiraescolha == 3) {
         i++;
 
@@ -274,7 +268,7 @@ function Hora1() {
 
         alterarStatus(60, 100, 80);
 
-        personagem.exibirStatus();
+        personagem.exibirStatus(personagem);
     } else {
         intervalo();
 
@@ -336,7 +330,7 @@ Então ${personagem.Nome}, Está Preparado Para Enfrentar Mais Essa Decisão que
 
         alterarStatus(58, 50, 90);
 
-        personagem.exibirStatus();
+        personagem.exibirStatus(personagem);
     } else if (Segundaescolha == 2) {
         intervalo();
 
@@ -365,7 +359,7 @@ se Encontra Trancada. Você Procura um Jeito de Escapar. Mas Parece que não há
 
         alterarStatus(79, 100, 100);
 
-        personagem.exibirStatus();
+        personagem.exibirStatus(personagem);
     } else {
         intervalo();
 
@@ -439,7 +433,7 @@ Agora Meu Caro ${personagem.Nome}! As Suas Escolhas Determinarão o Seu Destino 
 
         alterarStatus(100, 100, 100);
 
-        personagem.exibirStatus();
+        personagem.exibirStatus(personagem);
     } else if (Terceiraescolha == 3) {
         i++;
 
@@ -454,7 +448,7 @@ Então a Porta Automaticamente se Abre, e Você se Ver Livre de Toda Aquela Louc
 
         alterarStatus(50, 100, 80);
 
-        personagem.exibirStatus();
+        personagem.exibirStatus(personagem);
     } else {
         intervalo();
 
@@ -487,7 +481,7 @@ Foi Assim Que Esse Local se Tornou Assombrado.
 
     alterarStatus(100, 100, 100);
 
-    personagem.exibirStatus();
+    personagem.exibirStatus(personagem);
 
     i++;
 
@@ -511,7 +505,7 @@ function Intro() {
       Este é o Status do Seu Personagem: \x1b[0m `,
     );
 
-    personagem.exibirStatus(); //Chamando o Metodo exibirStatus, Que Vai exibir na Tela o Status do Personagem
+    personagem.exibirStatus(personagem); //Chamando o Metodo exibirStatus, Que Vai exibir na Tela o Status do Personagem
 
     console.log(
         `\x1b[33m \n Quando Algum dos Status Chegar a "0", Você Perde o Jogo! \n \x1b[0m`,
